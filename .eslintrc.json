@@ -1,0 +1,73 @@
+{
+  "env": { "vue/setup-compiler-macros": true },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-essential",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": ["vue", "@typescript-eslint"],
+  "rules": {
+    "vue/no-unused-components": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "indent": ["error", 2],
+    "@typescript-eslint/no-unused-vars": "error",
+    // "comma-dangle": ["error", "never"],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "func-call-spacing": ["error", "never"],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true,
+        "mode": "strict"
+      }
+    ],
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-trailing-spaces": "error",
+    "no-whitespace-before-property": "error",
+    "quotes": ["error", "single"],
+    "semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "space-before-blocks": ["error", "always"],
+    "space-infix-ops": "error",
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    // "space-before-function-paren": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "object-curly-newline": ["error", { "multiline": true }],
+    "object-property-newline": "error",
+    "block-spacing": ["error", "always"],
+    "vue/multi-word-component-names": "off"
+  }
+}
