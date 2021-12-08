@@ -77,3 +77,7 @@ export const reverseStr = (str: string) => str.split('').reverse()
  */
 export const toFixed = (n: number, fixed: number) =>
   ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed)
+
+export const uniqueArray = (arr: Array<any>) => {
+  return [...new Set(arr)]
+}
