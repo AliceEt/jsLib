@@ -1,5 +1,5 @@
 /**
- * 随机字符串
+ * 生成随机字符串
  */
 export const randomString = (length = 8) => {
   const $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
@@ -9,6 +9,31 @@ export const randomString = (length = 8) => {
     pwd += $chars.charAt(Math.floor(Math.random() * maxPos))
   }
   return pwd
+}
+
+/**
+ * 判断日期是否为工作日
+ */
+export const isWeekday = (date: any) => date.getDay() % 6 !== 0
+
+/**
+ * 格式化当前时间为可读性描述
+ */
+export const getDateTime = () => {
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = checkTime(date.getMonth() + 1)
+  const day = checkTime(date.getDate())
+  const hour = checkTime(date.getHours() + 1)
+  const minute = checkTime(date.getMinutes())
+  const second = checkTime(date.getSeconds())
+  function checkTime(i: any) {
+    if (i < 10) {
+      i = '0' + i
+    }
+    return i
+  }
+  return '' + year + '年' + month + '月' + day + '日 ' + hour + '时' + minute + '分' + second + '秒'
 }
 
 /**
@@ -38,10 +63,17 @@ export const transformDateTime = (time: string) => {
 }
 
 /**
- * 提取邮箱
+ * 反转字符串
+ * @param str
  */
-export const extractEmail = (mail: string) => {
-  const mailReg = /([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+/
-  const match = mail.match(mailReg)
-  return match && match[0]
-}
+export const reverseStr = (str: string) => str.split('').reverse()
+  .join('')
+
+/**
+ * 保留小数点（非四舍五入）
+ * @param n
+ * @param fixed 保留几位小数位
+ * @returns
+ */
+export const toFixed = (n: number, fixed: number) =>
+  ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed)
