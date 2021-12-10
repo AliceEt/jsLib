@@ -78,6 +78,49 @@ export const reverseStr = (str: string) => str.split('').reverse()
 export const toFixed = (n: number, fixed: number) =>
   ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed)
 
+/**
+ * 去除数组重复项
+ * @param arr
+ * @returns
+ */
 export const uniqueArray = (arr: Array<any>) => {
   return [...new Set(arr)]
 }
+
+/**
+ * 检查数组中某元素出现的次数
+ * @param arr
+ * @param value
+ * @returns
+ */
+export const countOccurrences = (arr: Array<any>, value: any) => {
+  return arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0)
+}
+
+/**
+ * 两数相加
+ * @param val1
+ * @param val2
+ * @returns
+ */
+export const add = (val1: any, val2: any) => {
+  return val1 + val2
+}
+
+// /**
+//  * 两数相减
+//  * @param val1
+//  * @param val2
+//  * @returns
+//  */
+// export const substract = (val1:any, val2:any) => {
+//   return val1 + val2
+// }
+
+// /**
+//  * 数组对象，求某一列属性的总和
+//  * @param arr
+//  * @param key
+//  * @returns
+//  */
+// export const fn = (arr:Array<any>, key:string) => arr.reduce((sum, item) => { return item[key] + sum }, 0)
